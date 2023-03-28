@@ -1,0 +1,115 @@
+/* Global styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+	position: relative;
+	height: 400px;
+	background-image: url(./meatballs.jpeg);
+	background-size: cover;
+	background-position: center;
+}
+
+.overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: white;
+}
+
+h1 {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+button {
+	background-color: white;
+	color: black;
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 2rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: black;
+	color: white;
+}
+
+/* Navigation styles */
+nav {
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+}
+
+nav ul li {
+	margin-right: 2rem;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+
+nav ul li a:hover {
+	color: gray;
+}
+
+/* Main content styles */
+main {
+	padding: 4rem 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.image-container {
+	flex-basis: 30%;
+}
+
+.image-container img {
+	width: 200px;
+	height:200px ;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+}
+
+.image-container h2 {
+	font-size: 1.5rem;
+	text-align: center;
+}
+.paragragh {
+	border-left: teal 4px solid;
+	background-color: beige;
+	padding: 1%;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+        <link rel="stylesheet" href="./recipe book style.css">
+        <script src="https://kit.fontawesome.com/d8d4662f0d.js" crossorigin="anonymous"></script>
+        <title>
+            Recipe book
+        </title>
+    </head>
+    <body>
+
+        <div class="menu_bar" id="menu">
+            <ul class="main_menu">
+                <li class="top_bar"><span class="join"> login/signup <i class="fa-solid fa-circle-user"></i> </span> </li>
+                <li class="top_bar">Contact us <i class="fa-solid fa-address-card"></i></li>
+                <li class="top_bar">About us <i class="fa-solid fa-book"></i></li>
+                <li class="top_bar"> Home </li>
+            </ul>
+        </div>
+        <div class="saved_recipies" id="savedrecipies">
+            <div class="recipe_list" id="recipe_place">
+                <h1> 
+                    My Recipies  <i class="fa-solid fa-bowl-rice"></i>
+                </h1>
+                <ul class="leftdiv_menu">
+                    <li class="side_menu"><span class="nav" id="favnav" onclick="changeColorefav()"><i class="fa-solid fa-heart" id="icon3"></i> Favorite </span></li>
+                    <li class="side_menu"><span class="nav" id="trinav" onclick="changeColoretri()"><i class="fa-solid fa-check" id="icon2"></i> Tried </span></li>
+                    <li class="side_menu"><span class="nav" id="savnav" onclick="changeColoresav()"><i class="fa-solid fa-bookmark" id="icon"></i> Saved</span> </li>
+                </ul>
+                <section class="recipesection">
+                <div>
+                    <div class="favdiv" id="favouritediv">
+
+                    </div>
+                </div>
+                <div class="tridiv" id="trieddiv">
+                    <div class="trimain" id="triedmain">
+
+                    </div>
+                </div>
+                <div class="savdiv" id="saveddiv">
+
+                </div>
+                </section>
+            </div>
+            
+        </div>
+        <div class="recipe_det" id="recipedetails">
+            <h1>
+                Hello!!, What are we cooking today? <i class="fa-solid fa-utensils"></i>
+            </h1>
+            <input type="search" class="search_bar" id="searcher" placeholder="find a recipe...">
+            </i><button type="button" class="search_button" id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i> Search </button>
+            <section class="detailsec" id="detailsection">
+                
+            </section>
+        </div>
+        </div>
+        <script>
+            //change left side navigation bar li elements color onclick and display and hide appropiate div
+
+            function changeColorefav() {
+                document.getElementById("favnav").style.color="pink",
+                document.getElementById("trinav").style.color="lime",
+                document.getElementById("savnav").style.color="lime",
+                document.getElementById("favouritediv").style.display="block",
+                document.getElementById("saveddiv").style.display="none",
+                document.getElementById("trieddiv").style.display="none";
+            }
+            function changeColoretri() {
+                document.getElementById("favnav").style.color="lime",
+                document.getElementById("trinav").style.color="pink",
+                document.getElementById("savnav").style.color="lime",
+                document.getElementById("trieddiv").style.display="block",
+                document.getElementById("favouritediv").style.display="none",
+                document.getElementById("saveddiv").style.display="none";
+
+            }
+            function changeColoresav() {
+                document.getElementById("favnav").style.color="lime",
+                document.getElementById("trinav").style.color="lime",
+                document.getElementById("savnav").style.color="pink",
+                document.getElementById("saveddiv").style.display="block",
+                document.getElementById("favouritediv").style.display="none",
+                document.getElementById("trieddiv").style.display="none";
+            }
+        </script>
+        <script defer src="./project api.js" ></script>
+    </body>
+</html>

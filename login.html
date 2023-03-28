@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" defer src="login.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Login Page</title>
+</head>
+<body>
+  <div class="top-container">
+    <ul>
+      <li>
+        <a href="../home.html">Home</a>
+      </li>
+      <li>
+        <a href="about us.html">About Us</a>
+      </li>
+      <li>
+        <a href="about us.html">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <div class="login-container">
+    <div id="log_in">
+        <h1>Login</h1>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button id="submit_btn" class="btn">Login</button>
+        <div class="signup-link">
+            <p>
+                Don't have an account?
+                <button  type="button" class="return_btn" id="hide" >Signup</button> 
+            </p>
+        </div>
+    </div>
+    <div id="sign_up">
+        <h1>Sign Up</h1>
+        <div class="form-group">
+            <label for="email"> Email</label>
+            <input id ="newemail" type="text" placeholder="Enter your email" required> 
+        </div>
+        <div class="form-group">
+            <label for="confirm email">Confirm Email</label>
+            <input id ="confirmemail" type="email" placeholder="Confirm your email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="newpassword" type="password" placeholder="Create Password" required>
+        </div>
+        <div class="form-group">
+            <label for="confir password">Confirm Password</label>
+            <input id ="confirmpassword" type="password" placeholder="confirm password" required>
+        </div>
+        <button class="btn" id="creat_account_btn">Create account</button>
+        <div class="return">
+            <p>
+                Already have an account?
+                <button id="back_btn"  type="button" class="return_btn">Return to login</button>
+            </p>
+        </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

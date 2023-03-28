@@ -1,0 +1,299 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    box-sizing : border-box;
+    margin :0;
+    background-color: rgb(231, 231, 231);
+    scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.recipe_det{
+    float: right;
+    width: 49%;
+    margin: auto;
+    margin: 0;
+    padding: 0;
+    margin-top: 2em;
+}
+/* recipe edits */
+ .recipe_header {
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+}
+.recipe_date {
+    font-family: cursive;
+    color: darkcyan;
+    font-weight: bolder;
+}
+.saved_header {
+    color: palevioletred;
+    font-family: 'Courier New', Courier, monospace;
+}
+.saved_date {
+    font-family: cursive;
+    color: green;
+}
+.recipe_list {
+    padding: 0;
+    width: 30%;
+    padding: 1%;
+    float: left;
+    margin: auto;
+    margin-top: 2em;
+
+}
+.recipesection {
+    overflow: auto;
+    height: 600px;
+
+}
+.saved_recipies{
+    margin-left:1em ;
+    margin-top: em;
+}
+/*search bar and button*/
+.search_bar {
+    width: 50%;
+    padding: 0.8em;
+    border: none;
+    border-radius: 3em;
+    color: black;
+    font-family: monospace;
+
+    border: 1px black solid;
+}
+.search_bar::placeholder {
+    color: lightgreen;
+    font-family: cursive;
+}
+.search_bar::placeholder {
+    animation: shake 0.5s linear;
+  }
+.search_button {
+    padding: 3px;
+    width:auto;
+    background-color: transparent;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+.search_bar:focus {
+    border-color:blue 1px soilid;
+}
+.search_button:hover {
+    color: red;
+}
+.search_bar:hover{
+    background-color: grey;
+}
+/* saved buttons */
+.favourite,.tried,.delete {
+    margin-bottom: 1%;
+    margin-top:1% ;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    font-size: large;
+    font-weight: bolder;
+    border: none;
+    transition: 0.3s;
+}
+.delete:hover{
+    color: red;
+    font-weight: bolder;
+    font-size: larger;
+    transition: 0.3s;
+}
+.tried:hover {
+    color: green;
+    font-weight: bolder;
+    font-size: larger;
+    transition: 0.3s;
+
+}
+.eye_link:hover{
+    color:orangered;
+}
+.eye_link {
+    width: 30px;
+    height:30px;
+    background-color: transparent;
+    font-size: large;
+    font-weight: bolder;
+    border:none;
+    transition: 0.3s;
+    color: black;
+}
+.recipelink {
+    padding: 1%;
+    border: none;
+    background-color: transparent;
+    font-weight: bolder;
+    color: chartreuse;
+    font-size: larger;
+    cursor: pointer;
+    border: lightgreen 1px solid;
+    border-radius: 5px;
+    background-color: black;
+}
+.recipelink:hover {
+    color: pink;
+}
+.tosavebtn , .addtofavbutton {
+    background-color: transparent;
+    border:1px limegreen solid;
+    padding: 1%;
+    border-radius: 10px;
+    color: red;
+    background-color: whitesmoke;
+    font-weight: bolder;
+    margin-left: 1%;
+
+}
+.tosavebtn:hover ,.addtofavbutton:hover {
+    color: lime;
+    border: red 1px solid;
+}
+.addtofavbutton::after {
+    background-color: red;
+    color: white;
+}
+.detailsec {
+    margin-top: 2%;
+    padding: 2%;
+    overflow: auto;
+    height: 560px;
+}
+/*nav_bars*/
+ul.main_menu {
+    color: burlywood;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding: 8px;
+    margin-top: 15px;
+    
+}
+.join {
+    font-weight: bolder;
+    color: rgb(226, 19, 53);
+
+}
+h1 {
+    color: teal;
+}
+
+li.top_bar {
+    float: right;
+    list-style-type: none;
+    padding-left:9% ;
+    margin-right: 8%;
+    
+
+}
+li.side_menu {
+    display: inline;
+    text-align: center;
+    list-style-type: none;
+    padding: 1%;
+    padding-left: 15%;
+}
+ul.leftdiv_menu,a {
+    color: lime;
+    margin: 0;
+    padding: 0;
+    background-color:black;
+    padding: 1%;
+    width: 100%;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+li :hover {
+    border-bottom: 1px purple solid;
+    cursor: pointer;
+}
+/*list sction divs*/
+.favdiv , .tridiv , .savdiv {
+    display: none;
+    margin-top: 2%;
+    padding: 5%;
+    
+}
+.recipe_flow {
+    display: none;
+}
+.favrecipe_info {
+    display: none;
+}
+.recipe_img {
+    margin-top: 1%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.profileimg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.searchimage {
+    width: 150px;
+    height: 150px;
+    margin-top: 2%;
+    border-radius: 50%;
+}
+.fav_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: lime 1px solid;
+    transition: 0.5s;
+}
+
+.favmain {
+    margin-top: 2%;
+    display: flex;
+    color: blue;
+}
+.everyelse {
+    display: flex;
+}
+.detail{
+  margin-left: 2%;
+}
+.favouritelist {
+    margin-left: 1%;
+}
+.list_sec {
+    overflow: auto;
+    height: 550px;
+    
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.remove {
+    background-color: transparent;
+    border: none;
+    font-family: cursive;
+    font-size: medium;
+    color: red;
+    padding: 1%;
+    font-weight: bolder;
+}
+.remove:hover {
+    color: limegreen;
+}
+@media screen and (max-width:500px) {
+    .recipe_det{
+        width: 100%;
+        display: block;
+    }
+    .recipe_list{
+        width: 100%;
+        margin-left: 0;
+    }
+}
