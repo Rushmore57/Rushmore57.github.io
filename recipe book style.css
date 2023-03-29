@@ -168,6 +168,11 @@ body {
 }
 /*nav_bars*/
 ul.main_menu {
+    border-left: teal 2px solid;
+    border-right: teal 2px solid;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    border-bottom: teal 2px solid;
     color: burlywood;
     margin: 0;
     padding: 0;
@@ -201,10 +206,14 @@ li.side_menu {
     padding-left: 15%;
 }
 ul.leftdiv_menu,a {
-    color: lime;
+    background-color: whitesmoke;
+    border-top: teal 2px solid;
+    border-left: teal 2px solid;
+    border-right: teal 2px solid;
+    color: black;
     margin: 0;
+    font-weight: bolder;
     padding: 0;
-    background-color:black;
     padding: 1%;
     width: 100%;
     border-radius: 20px;
@@ -212,7 +221,7 @@ ul.leftdiv_menu,a {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 li :hover {
-    border-bottom: 1px purple solid;
+    border-bottom: 2px rgb(206, 206, 19) solid;
     cursor: pointer;
 }
 /*list sction divs*/
