@@ -92,8 +92,9 @@ addToFavButton.addEventListener('click', function () {
         </div>
         `
       );
-      addToFavButton.textContent="added";
-      addToFavButton.style.backgroundColor="lime";
+      var iconHeart = `<i class="fa-regular fa-heart"></i>`
+      addToFavButton.innerHTML=iconHeart;
+      addToFavButton.style.backgroundColor="pink";
     }
   });
   
@@ -150,8 +151,9 @@ addToFavButton.addEventListener('click', function () {
 
                 `
               );
-              addToSavedButton.textContent="added";
-              addToSavedButton.style.backgroundColor="lime";
+              var iconSaved = `<i class="fa-solid fa-bookmark"></i>`
+              addToSavedButton.innerHTML=iconSaved;
+              addToSavedButton.style.backgroundColor="pink";
             }
           });
           // Code to add recipe to saved
