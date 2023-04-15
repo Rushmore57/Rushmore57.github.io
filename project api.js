@@ -103,7 +103,6 @@ addToFavButton.addEventListener('click', function () {
   
 });
 
-
         recipeDiv.appendChild(addToFavButton);
 
         const addToSavedButton = document.createElement('button');
@@ -122,6 +121,39 @@ addToFavButton.addEventListener('click', function () {
           const BDnT = date + word + time;
           const databaseRef = firebase.database().ref(); 
           const ref = databaseRef.child("saved recipes");
+          // Get a reference to the database
+const dbRef = firebase.database().ref();
+
+// Get a reference to the saved recipes section in the HTML
+const savedRecipesSection = document.getElementById('saveddiv');
+
+// Listen for changes to the saved recipes data in the database
+dbRef.child('saved recipes').on('value', function(snapshot) {
+  // Clear the existing HTML
+  savedRecipesSection.innerHTML = '';
+
+  // Loop through each saved recipe and add it to the HTML
+  snapshot.forEach(function(childSnapshot) {
+    const recipe = childSnapshot.val();
+    const recipeHtml = `
+      <div class="favouritelist">
+        <div class="everyelse">
+          <img src="${recipe.recipeImage}" class="fav_img">
+          <div class="detail">
+            <h1 class="saved_header"> ${recipe.recipeName} <i class="fa-regular fa-bookmark"></i></h1>
+            <p class="saved_date"><i class="fa-regular fa-calendar-days"></i> ${recipe.dateAndTime} </p>
+            <a class="eye_link" href="${recipe.recipeSource}"> <i class="fa-solid fa-utensils"></i> view recipe </a>
+          </div>
+        </div>
+        <button type="button" class="favourite"><i class="fa-solid fa-heart"></i></button>
+        <button type="button" class="tried"><i class="fa-solid fa-circle-check"></i></button>
+        <button type="button" class="delete"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+    `;
+    savedRecipesSection.insertAdjacentHTML('beforeend', recipeHtml);
+  });
+});
+
           // query the database for existing recipes with the same name
           ref.orderByChild("recipeName").equalTo(recipeName).once("value", function(snapshot) {
             if (snapshot.exists()) {
@@ -158,6 +190,7 @@ addToFavButton.addEventListener('click', function () {
               addToSavedButton.innerHTML=iconSaved;
               addToSavedButton.style.backgroundColor="pink";
             }
+            
           });
           // Code to add recipe to saved
         });
@@ -176,4 +209,5 @@ addToFavButton.addEventListener('click', function () {
     .catch(error => {
       console.error(error);
     });
+    
 }
