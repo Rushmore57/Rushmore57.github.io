@@ -20,6 +20,9 @@ const searchButton = document.getElementById('searchbtn');
 const detailSection = document.getElementById('detailsection');
 
 searchButton.addEventListener('click', searchRecipes);
+window.onload = function() {
+  searchRecipes();
+}
 
 function searchRecipes() {
   const query = searchInput.value;
