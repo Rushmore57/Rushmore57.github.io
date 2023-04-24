@@ -13,7 +13,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const apiKey = '164901c663694ab6b5cbdb39b3bed85a'; 
+const apiKey = 'a34fd27a1d14470e8845df27b2117c19'; 
 
 const searchInput = document.getElementById('searcher');
 const searchButton = document.getElementById('searchbtn');
@@ -36,9 +36,15 @@ function searchRecipes() {
         alert("oops,looks like we don't have that recipe. Make sure you typed it corectly.")
       }
       else{
+        let container = document.createElement('div');
+container.className = "container";
+document.body.appendChild(container);
+
+// Create a counter variable to keep track of the number of recipes added to the container
+let recipeCounter = 0;
       recipes.forEach(recipe => {
         const recipeDiv = document.createElement('div');
-        recipeDiv.classList.add('recipe');
+        recipeDiv.className= "listing";
 
         const recipeImg = document.createElement('img');
         recipeImg.src = recipe.image;
@@ -55,8 +61,10 @@ function searchRecipes() {
         recipeDiv.appendChild(recipeLink);
         recipeLink.className="recipelink";
 
+        
+
         const addToFavButton = document.createElement('button');
-        addToFavButton.textContent = 'Add to Favorite';
+        addToFavButton.innerHTML = '<i class="fa-solid fa-heart"></i>';
 addToFavButton.className = "addtofavbutton";
 addToFavButton.addEventListener('click', function () { 
   const recipeName = recipeTitle.textContent;
@@ -106,7 +114,7 @@ addToFavButton.addEventListener('click', function () {
         recipeDiv.appendChild(addToFavButton);
 
         const addToSavedButton = document.createElement('button');
-        addToSavedButton.textContent = 'Save recipe';
+        addToSavedButton.innerHTML = '<i class="fa-solid fa-bookmark"></i>`';
         addToSavedButton.id = "savebtn";
         addToSavedButton.className = "tosavebtn";
         addToSavedButton.addEventListener('click', () => {
@@ -121,18 +129,16 @@ addToFavButton.addEventListener('click', function () {
           const BDnT = date + word + time;
           const databaseRef = firebase.database().ref(); 
           const ref = databaseRef.child("saved recipes");
-          // Get a reference to the database
+ 
 const dbRef = firebase.database().ref();
 
-// Get a reference to the saved recipes section in the HTML
 const savedRecipesSection = document.getElementById('saveddiv');
 
-// Listen for changes to the saved recipes data in the database
 dbRef.child('saved recipes').on('value', function(snapshot) {
   // Clear the existing HTML
   savedRecipesSection.innerHTML = '';
 
-  // Loop through each saved recipe and add it to the HTML
+ 
   snapshot.forEach(function(childSnapshot) {
     const recipe = childSnapshot.val();
     const recipeHtml = `
@@ -194,14 +200,20 @@ dbRef.child('saved recipes').on('value', function(snapshot) {
           });
           // Code to add recipe to saved
         });
+        const allRec = recipeDiv;
         recipeDiv.appendChild(addToSavedButton);
 
-        detailSection.appendChild(recipeDiv); 
-        
-
-
-        
-        
+        container.appendChild(recipeDiv);
+        detailSection.appendChild(container)
+        recipeCounter++;
+      
+        // If the current container now has 5 recipes, create a new container and reset the counter
+        if (recipeCounter === 4) {
+          container = document.createElement('div');
+          container.className = "container";
+          document.body.appendChild(container);
+          recipeCounter = 0;
+        }
         
       });
   
