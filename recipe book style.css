@@ -2,7 +2,7 @@ body {
     font-family: 'Work Sans', sans-serif;
     box-sizing : border-box;
     margin :0;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(247, 247, 247);
     scroll-behavior: smooth;
 }
 
@@ -19,4 +19,41 @@ body {
 }
 .listing img {
     width: 100%;
+}
+nav {
+    background-color: white;
+    padding: 1%;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+nav a {
+    text-decoration: none;
+    color: black;
+}
+.menu {
+    color: orangered;
+    font-weight: bolder;
+    font-size: medium;
+}
+header {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+}
+header input {
+    width: 30%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px black solid;
+}
+header input:hover {
+    border: 1px lime solid;
+}
+header button {
+    border: none;
+    background-color: transparent;
+    color: orangered;
+    font-size: large;
 }
