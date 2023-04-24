@@ -13,7 +13,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const apiKey = 'a34fd27a1d14470e8845df27b2117c19'; 
+const apiKey = '0619a20d94fb42efbeb693da6939ef1b'; 
 
 const searchInput = document.getElementById('searcher');
 const searchButton = document.getElementById('searchbtn');
