@@ -144,7 +144,7 @@ dbRef.child('saved recipes').on('value', function(snapshot) {
         <div class="everyelse">
           <img src="${recipe.recipeImage}" class="fav_img">
           <div class="detail">
-            <h1 class="saved_header"> ${recipe.recipeName} <i class="fa-regular fa-bookmark"></i></h1>
+            <h4 class="saved_header"> ${recipe.recipeName} <i class="fa-regular fa-bookmark"></i></h4>
             <p class="saved_date"><i class="fa-regular fa-calendar-days"></i> ${recipe.dateAndTime} </p>
             <a class="eye_link" href="${recipe.recipeSource}"> <i class="fa-solid fa-utensils"></i> view recipe </a>
           </div>
@@ -177,7 +177,7 @@ dbRef.child('saved recipes').on('value', function(snapshot) {
                   <div class="everyelse">
                     <img src="${recipeImage}" class="fav_img">
                     <div class="detail">
-                      <h1 class="saved_header"> ${recipeName} <i class="fa-regular fa-bookmark"></i></h1>
+                      <h4 class="saved_header"> ${recipeName} <i class="fa-regular fa-bookmark"></i></h4>
                       <p class="saved_date"><i class="fa-regular fa-calendar-days"></i> ${BDnT} </p>
                       <a class="eye_link" href="${recipeSource}"> <i class="fa-solid fa-utensils"></i> view recipe </a>
                     </div>

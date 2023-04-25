@@ -80,18 +80,31 @@ header button {
     font-size: large;
     cursor:pointer;
 }
-.favdiv {
+.favdiv,.savdiv,.tridiv {
     width: 90%;
     height: 280px;
     display: none;
+}
+.favourite, .tried {
+    color: rgb(161, 42, 62);
+}
+.delete {
+    color: red;
+    font-weight: bolder;
+}
+.favouritelist a {
+    color: blanchedalmond;
+}
+.favouritelist p {
+    font-weight: bolder;
 }
 .favouritelist {
     width:15%;
     color: white;
 }
 .fav_img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 .selector {
