@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            <nav>
+            <nav class="top-nav">
                 <ul>
                     <a href="#"> Home </a>
                     <a href="#" class="menu"> Menu </a>
@@ -24,8 +24,23 @@
             <header>
                 <input type="search" class="search_bar" id="searcher" placeholder="find a recipe...">
             </i><button type="button" class="search_button" id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i> Search </button>
+            <nav class="selector">
+                <ul>
+                    <a id="favnav" onclick="changeColorefav()"> Favorite </a>
+                    <a id="trinav" onclick="changeColoretri()"> Tried </a>
+                    <a id="savnav" onclick="changeColoresav()"> Saved </a>
+                </ul>
+            </nav>
             <div class="container">
-                <div class="top-list"></div>
+                    <div class="favdiv" id="favouritediv">
+
+                    </div>
+                <div class="tridiv" id="trieddiv">
+                    
+                </div>
+                <div class="savdiv" id="saveddiv">
+
+                </div>
             </div>
 
             </header>
@@ -73,26 +88,26 @@
 
             function changeColorefav() {
                 document.getElementById("favnav").style.color="red",
-                document.getElementById("trinav").style.color="black",
-                document.getElementById("savnav").style.color="black",
-                document.getElementById("favouritediv").style.display="block",
+                document.getElementById("trinav").style.color="white",
+                document.getElementById("savnav").style.color="white",
+                document.getElementById("favouritediv").style.display="flex",
                 document.getElementById("saveddiv").style.display="none",
                 document.getElementById("trieddiv").style.display="none";
             }
             function changeColoretri() {
-                document.getElementById("favnav").style.color="black",
+                document.getElementById("favnav").style.color="white",
                 document.getElementById("trinav").style.color="red",
-                document.getElementById("savnav").style.color="black",
-                document.getElementById("trieddiv").style.display="block",
+                document.getElementById("savnav").style.color="white",
+                document.getElementById("trieddiv").style.display="flex",
                 document.getElementById("favouritediv").style.display="none",
                 document.getElementById("saveddiv").style.display="none";
 
             }
             function changeColoresav() {
-                document.getElementById("favnav").style.color="black",
-                document.getElementById("trinav").style.color="black",
+                document.getElementById("favnav").style.color="white",
+                document.getElementById("trinav").style.color="white",
                 document.getElementById("savnav").style.color="red",
-                document.getElementById("saveddiv").style.display="block",
+                document.getElementById("saveddiv").style.display="flex",
                 document.getElementById("favouritediv").style.display="none",
                 document.getElementById("trieddiv").style.display="none";
             }

@@ -39,8 +39,6 @@ function searchRecipes() {
         let container = document.createElement('div');
 container.className = "container";
 document.body.appendChild(container);
-
-// Create a counter variable to keep track of the number of recipes added to the container
 let recipeCounter = 0;
       recipes.forEach(recipe => {
         const recipeDiv = document.createElement('div');
@@ -96,7 +94,7 @@ addToFavButton.addEventListener('click', function () {
           <div class="everyelse">
             <img src="${recipeImage}" class="fav_img">
             <div class="detail">
-              <h1 class="recipe_header"> ${recipeName} <i class="fa-solid fa-heart-circle-check"></i> </h1>
+              <h3 class="recipe_header"> ${recipeName} <i class="fa-solid fa-heart-circle-check"></i> </h3>
               <p class="recipe_date"><i class="fa-regular fa-calendar-days"></i> ${BDnT} </p>
             </div>
           </div>
@@ -207,7 +205,6 @@ dbRef.child('saved recipes').on('value', function(snapshot) {
         detailSection.appendChild(container)
         recipeCounter++;
       
-        // If the current container now has 5 recipes, create a new container and reset the counter
         if (recipeCounter === 4) {
           container = document.createElement('div');
           container.className = "container";
